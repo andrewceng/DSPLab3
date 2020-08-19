@@ -1,0 +1,14 @@
+fs = 8000;
+T = 1/fs;
+fL = [697, 770, 852, 941];
+fH = [1209, 1336, 1477];
+fM = [fL fH]*2*pi*T;
+y1 = y((1:2400));
+y2 = y(2401:4800);
+y3 = y(4801:7200);
+yz1 = freqz(y1,1,fM);
+yz2 = freqz(y2,1,fM);
+yz3 = freqz(y3,1,fM);
+dial1 = abs(yz1)
+dial2 = abs(yz2)
+dial3 = abs(yz3)
